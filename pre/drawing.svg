@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.7038197"
-     inkscape:cx="73.436203"
-     inkscape:cy="882.89793"
+     inkscape:zoom="5.4076394"
+     inkscape:cx="32.760226"
+     inkscape:cy="668.84323"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -100,5 +100,29 @@
        height="45"
        x="27.356422"
        y="195.30954" />
+    <path
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 47.760411,361.8615 A 20.583334,20.583334 0 0 0 27.177077,382.44483 20.583334,20.583334 0 0 0 47.760411,403.02817 20.583334,20.583334 0 0 0 68.343744,382.44483 20.583334,20.583334 0 0 0 47.760411,361.8615 Z m 0,3.21436 a 17.369088,17.369088 0 0 1 17.370761,17.36897 17.369088,17.369088 0 0 1 -17.370761,17.36898 17.369088,17.369088 0 0 1 -17.368975,-17.36898 17.369088,17.369088 0 0 1 17.368975,-17.36897 z"
+       id="circle4185"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/hole.png"
+       inkscape:export-xdpi="256"
+       inkscape:export-ydpi="256" />
+    <path
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 45.9891,359.94572 0,11.23525 a 11.38463,11.38463 0 0 1 1.721075,-0.1397 11.38463,11.38463 0 0 1 1.823333,0.15986 l 0,-11.25541 -3.544408,0 z m 3.544408,33.71148 a 11.38463,11.38463 0 0 1 -1.823333,0.15266 11.38463,11.38463 0 0 1 -1.721075,-0.14402 l 0,11.27989 3.544408,0 0,-11.28853 z"
+       id="rect4189"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/hole.png"
+       inkscape:export-xdpi="256"
+       inkscape:export-ydpi="256" />
+    <path
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 25.261304,380.67208 0,3.54586 11.212194,0 a 11.38463,11.38463 0 0 1 -0.148344,-1.79309 11.38463,11.38463 0 0 1 0.151224,-1.75277 l -11.215074,0 z m 33.68987,0 a 11.38463,11.38463 0 0 1 0.144023,1.75277 11.38463,11.38463 0 0 1 -0.156985,1.79309 l 11.323092,0 0,-3.54586 -11.31013,0 z"
+       id="rect4191"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/hole.png"
+       inkscape:export-xdpi="256"
+       inkscape:export-ydpi="256" />
   </g>
 </svg>
