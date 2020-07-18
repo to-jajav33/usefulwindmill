@@ -43,7 +43,7 @@ func fnCalcMouseInfo():
 	var endPos : Vector2 = self.get_global_mouse_position();
 	var distance = min(startPos.distance_to(endPos), self.__DIVE_MAX_DIST);
 	var direction = startPos.direction_to(endPos);
-	var angle = startPos.angle_to(endPos);
+	var angle = endPos.angle_to_point(startPos);
 	return {
 		'distance': distance,
 		'direction': direction,
@@ -51,6 +51,7 @@ func fnCalcMouseInfo():
 	};
 
 func fnHandleDive() -> void:
+	self.fnHandleGunRotate();
 	self.__canDive = ($RigidBody2D.linear_velocity == Vector2.ZERO) or ($RigidBody2D.sleeping);
 	
 	if ((self.__canDive == true) && Input.is_action_pressed("dive")):
@@ -65,13 +66,18 @@ func fnHandleDive() -> void:
 		self.fnDive(self.__diveDirection * self.__diveSpeed);
 	return;
 
+func fnHandleGunRotate():
+	var mouseInfo = self.fnCalcMouseInfo();
+	$RigidBody2D/gun_pivot.rotation = mouseInfo.angle;
+	return;
+
 func fnHandleShoot() -> void:
+	self.fnHandleGunRotate();
 	if (Input.is_action_just_pressed("dive")):
 		var mouseInfo = self.fnCalcMouseInfo();
 		var bullInst = load("res://components/Bullet.tscn").instance();
-		bullInst.rotation_degrees = mouseInfo.angle;
-		$RigidBody2D/gun_pivot.rotation_degrees = mouseInfo.angle;
-		$RigidBody2D/gun_pivot/gun.add_child(bullInst);
+		self.add_child(bullInst);
+		bullInst.global_position = $RigidBody2D/gun_pivot/gun.global_position;
 	
 		bullInst.shoot(mouseInfo.direction.normalized() * 1000.0);
 	return;
