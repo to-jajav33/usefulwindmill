@@ -28,16 +28,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.4076394"
-     inkscape:cx="32.760226"
-     inkscape:cy="668.84323"
+     inkscape:zoom="15.295114"
+     inkscape:cx="43.390662"
+     inkscape:cy="568.15494"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1025"
      inkscape:window-height="665"
      inkscape:window-x="846"
-     inkscape:window-y="131"
+     inkscape:window-y="94"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -122,6 +122,15 @@
        id="rect4191"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/hole.png"
+       inkscape:export-xdpi="256"
+       inkscape:export-ydpi="256" />
+    <circle
+       cy="485.68661"
+       cx="30.106422"
+       id="circle4149"
+       style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
+       r="2.75"
+       inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/bullet.png"
        inkscape:export-xdpi="256"
        inkscape:export-ydpi="256" />
   </g>

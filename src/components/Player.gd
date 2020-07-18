@@ -43,9 +43,11 @@ func fnCalcMouseInfo():
 	var endPos : Vector2 = self.get_global_mouse_position();
 	var distance = min(startPos.distance_to(endPos), self.__DIVE_MAX_DIST);
 	var direction = startPos.direction_to(endPos);
+	var angle = startPos.angle_to(endPos);
 	return {
 		'distance': distance,
-		'direction': direction
+		'direction': direction,
+		'angle': angle
 	};
 
 func fnHandleDive() -> void:
@@ -64,6 +66,14 @@ func fnHandleDive() -> void:
 	return;
 
 func fnHandleShoot() -> void:
+	if (Input.is_action_just_pressed("dive")):
+		var mouseInfo = self.fnCalcMouseInfo();
+		var bullInst = load("res://components/Bullet.tscn").instance();
+		bullInst.rotation_degrees = mouseInfo.angle;
+		$RigidBody2D/gun_pivot.rotation_degrees = mouseInfo.angle;
+		$RigidBody2D/gun_pivot/gun.add_child(bullInst);
+	
+		bullInst.shoot(mouseInfo.direction.normalized() * 1000.0);
 	return;
 
 func fnHandleToggleShoot() -> void:
