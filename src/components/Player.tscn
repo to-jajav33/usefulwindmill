@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/player.png" type="Texture" id=1]
 [ext_resource path="res://components/Player.gd" type="Script" id=2]
@@ -9,11 +9,28 @@ bounce = 0.25
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
+[sub_resource type="Animation" id=3]
+resource_name = "toggle_to_shoot"
+tracks/0/type = "value"
+tracks/0/path = NodePath("RigidBody2D/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+
 [node name="Player" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_material_override = SubResource( 2 )
+contacts_reported = 1
+contact_monitor = true
 linear_damp = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
@@ -30,3 +47,6 @@ zoom = Vector2( 2, 2 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
+
+[node name="AnimationPlayer_Camera" type="AnimationPlayer" parent="."]
+anims/toggle_to_shoot = SubResource( 3 )
