@@ -26,10 +26,11 @@ func _process(delta: float) -> void:
 		var endPos : Vector2 = self.get_global_mouse_position();
 		var distance = min(startPos.distance_to(endPos), self.__DIVE_MAX_DIST);
 		self.__diveSpeed = self.__DIVE_DIST_FACTOR * distance;
+		self.__diveDirection = startPos.direction_to(endPos).normalized()
 		
 	elif((self.__canUseInput == true) && (self.__willDiveOnRelease)):
 		self.__willDiveOnRelease = false;
-		self.fnDive(Vector2.RIGHT * self.__diveSpeed);
+		self.fnDive(self.__diveDirection * self.__diveSpeed);
 	pass
 
 func fnDive (paramForce : Vector2) -> void:
