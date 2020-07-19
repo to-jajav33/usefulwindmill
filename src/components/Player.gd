@@ -18,7 +18,7 @@ var __toggleShootMode : int = TOGGLE_MODES.OFF;
 var __diveSpeed := 0.0;
 var __diveDirection := Vector2.ZERO;
 var __willDiveOnRelease := false;
-var __canDive = true;
+var __isStill = true;
 var __currentMode : int = MODES.DIVE;
 var __previousMode : int = MODES.DIVE;
 
@@ -29,8 +29,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("toggle_shoot")):
-		fnHandleToggleShoot();
+	self.fnHandleGunRotate();
+	if (not $AnimationPlayer_Camera.is_playing()):
+		self.__isStill = ($RigidBody2D.linear_velocity == Vector2.ZERO) or ($RigidBody2D.sleeping);
 	
 	if (self.__currentMode == MODES.DIVE):
 		self.fnHandleDive();
@@ -51,19 +52,20 @@ func fnCalcMouseInfo():
 	};
 
 func fnHandleDive() -> void:
-	self.fnHandleGunRotate();
-	self.__canDive = ($RigidBody2D.linear_velocity == Vector2.ZERO) or ($RigidBody2D.sleeping);
+	if ($AnimationPlayer_Camera.is_playing()):
+		return;
 	
-	if ((self.__canDive == true) && Input.is_action_pressed("dive")):
+	if ((self.__isStill == true) && Input.is_action_pressed("dive")):
 		self.__willDiveOnRelease = true;
 		
 		var mouseInfo = fnCalcMouseInfo();
 		self.__diveSpeed = self.__DIVE_DIST_FACTOR * mouseInfo.distance;
 		self.__diveDirection = mouseInfo.direction.normalized();
 		
-	elif((self.__canDive == true) && (self.__willDiveOnRelease)):
+	elif((self.__isStill == true) && (self.__willDiveOnRelease)):
 		self.__willDiveOnRelease = false;
 		self.fnDive(self.__diveDirection * self.__diveSpeed);
+		self.fnGoToShootMode();
 	return;
 
 func fnHandleGunRotate():
@@ -72,7 +74,10 @@ func fnHandleGunRotate():
 	return;
 
 func fnHandleShoot() -> void:
-	self.fnHandleGunRotate();
+	if(self.__isStill):
+		self.fnGoToDiveMode();
+		return;
+	
 	if (Input.is_action_just_pressed("dive")):
 		var mouseInfo = self.fnCalcMouseInfo();
 		var bullInst = load("res://components/Bullet.tscn").instance();
@@ -82,18 +87,19 @@ func fnHandleShoot() -> void:
 		bullInst.shoot(mouseInfo.direction.normalized() * 1000.0);
 	return;
 
-func fnHandleToggleShoot() -> void:
-	if (self.__toggleShootMode == TOGGLE_MODES.OFF):
-		self.__previousMode = self.__currentMode;
-		self.__currentMode = MODES.SHOOT;
-		self.__toggleShootMode = TOGGLE_MODES.ON;
-		$AnimationPlayer_Camera.play("toggle_to_shoot");
-	else:
-		self.__toggleShootMode = TOGGLE_MODES.OFF;
-		self.__currentMode = self.__previousMode;
-		$AnimationPlayer_Camera.play_backwards("toggle_to_shoot");
+func fnGoToShootMode():
+	self.__currentMode = MODES.SHOOT;
+	self.__toggleShootMode = TOGGLE_MODES.ON;
+	$AnimationPlayer_Camera.play("toggle_to_shoot");
+	return;
+
+func fnGoToDiveMode() -> void:
+	self.__toggleShootMode = TOGGLE_MODES.OFF;
+	self.__currentMode = MODES.DIVE;
+	$AnimationPlayer_Camera.play_backwards("toggle_to_shoot");
 	return;
 
 func fnDive (paramForce : Vector2) -> void:
+	self.__isStill = false;
 	$RigidBody2D.apply_central_impulse(paramForce);
 	return;
