@@ -2,8 +2,7 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+signal signal_destroyed();
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,5 +17,6 @@ func _ready() -> void:
 
 func _on_RigidBody2D_body_entered(body: Node) -> void:
 	if (body.is_in_group("bullet") || body.is_in_group("player")):
+		emit_signal("signal_destroyed");
 		self.queue_free();
 	pass # Replace with function body.

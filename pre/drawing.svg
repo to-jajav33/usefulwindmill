@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9118893"
-     inkscape:cx="-17.345266"
-     inkscape:cy="628.91705"
+     inkscape:zoom="10.815279"
+     inkscape:cx="38.028509"
+     inkscape:cy="681.46463"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -142,5 +142,11 @@
        inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/enemy.png"
        inkscape:export-xdpi="256"
        inkscape:export-ydpi="256" />
+    <circle
+       r="10.017659"
+       cy="382.44574"
+       cx="47.761303"
+       id="circle4152"
+       style="opacity:1;fill:#45ff34;fill-opacity:0.85897434;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
 </svg>
