@@ -28,7 +28,9 @@ tracks/0/keys = {
 [node name="Player" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=[
+"player",
+]]
 physics_material_override = SubResource( 1 )
 contacts_reported = 1
 contact_monitor = true

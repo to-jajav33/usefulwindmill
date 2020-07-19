@@ -28,17 +28,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="15.295114"
-     inkscape:cx="43.390662"
-     inkscape:cy="568.15494"
+     inkscape:zoom="1.9118893"
+     inkscape:cx="-17.345266"
+     inkscape:cy="628.91705"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1025"
-     inkscape:window-height="665"
-     inkscape:window-x="846"
-     inkscape:window-y="94"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -131,6 +131,15 @@
        style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
        r="2.75"
        inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/bullet.png"
+       inkscape:export-xdpi="256"
+       inkscape:export-ydpi="256" />
+    <circle
+       r="22.5"
+       cy="446.32251"
+       cx="49.856422"
+       id="circle4150"
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:14.52000046, 14.52000046000000033;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/jajav33/Documents/workspace/jajav33/usefulwindmill/src/assets/enemy.png"
        inkscape:export-xdpi="256"
        inkscape:export-ydpi="256" />
   </g>
