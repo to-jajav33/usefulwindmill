@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/CoffeeBlack.ogg-48a967670e213bc3af7391858c04d80e.oggstr"
+
+[deps]
+
+source_file="res://assets/CoffeeBlack.ogg"
+dest_files=[ "res://.import/CoffeeBlack.ogg-48a967670e213bc3af7391858c04d80e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

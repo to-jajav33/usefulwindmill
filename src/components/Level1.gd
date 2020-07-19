@@ -19,6 +19,6 @@ func fnOnUnlockPortal():
 func fnOnPlayerReachedGoal():
 	if (nextLevel > 0):
 		$"/root/Common".fnChangeSceneTo("Level" + str(nextLevel));
-#	else:
-#		$"/root/Common".fnChangeSceneTo("EndScene");
+	else:
+		$"/root/Common".fnChangeSceneTo("EndScene");
 	return;

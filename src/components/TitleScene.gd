@@ -8,12 +8,16 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"/root/Common".fnSetMainScene($Scenes);
-	$"/root/Common".fnChangeSceneTo("TitleScene");
-	$AudioStreamPlayer.play(2.0);
-	$AudioStreamPlayer.playing = true;
+	self.set_process_input(true);
 	pass # Replace with function body.
 
+
+func _input(event: InputEvent) -> void:
+	if ((event is InputEventMouse) || (event is InputEventMouseMotion)):
+		return;
+	
+	$"/root/Common".fnChangeSceneTo("Level1");
+	return;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
